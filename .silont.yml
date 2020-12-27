@@ -10,4 +10,4 @@ steps:
   - cd silont
   - wget https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c silont -ci drone
+  - bash compile.sh -c proton -ci drone
