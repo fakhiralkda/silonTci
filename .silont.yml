@@ -8,6 +8,6 @@ steps:
   - apt update -qqy && apt install -qqy openjdk-11-jre-headless
   - git clone --depth=1 https://github.com/rzlamrr/silont-ginkgo silont
   - cd silont
-  - wget https://github.com/rzlamrr/scripts/raw/master/KERNEL/drone.sh
-  - chmod +x drone.sh
-  - bash drone.sh
+  - wget https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
+  - chmod +x compile.sh
+  - bash compile.sh
