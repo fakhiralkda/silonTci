@@ -5,9 +5,9 @@ steps:
 - name: compile
   image: fadlyas/kernel_dockerfile:latest
   commands:
-  - apt update -qqy && apt install -qqy openjdk-11-jre-headless
-  - git clone --depth=1 https://github.com/rzlamrr/silont-ginkgo silont
+  - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
+  - git clone -qq --depth=1 https://github.com/rzlamrr/silont-ginkgo silont
   - cd silont
-  - wget https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
+  - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
   - bash compile.sh -c silont -ci drone
