@@ -1,0 +1,12 @@
+kind: pipeline
+name: kmd
+
+steps:
+- name: compile
+  image: fadlyas/kernel_dockerfile:latest
+  commands:
+  - git clone --depth=1 https://github.com/rzlamrr/silont-ginkgo silont
+  - cd silont
+  - wget https://github.com/rzlamrr/scripts/raw/master/KERNEL/drone.sh
+  - chmod +x drone.sh
+  - bash drone.sh
