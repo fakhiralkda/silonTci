@@ -9,6 +9,8 @@ steps:
       from_secret: TOKED
     CHATID:
       from_secret: CHATID
+    ORIGIN:
+      from_secret: ORIGIN
   commands:
   - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
   - git clone -qq --depth=1 https://github.com/rzlamrr/silont-ginkgo silont
