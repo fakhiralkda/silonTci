@@ -16,9 +16,8 @@ steps:
   - git clone -qq $ORIGIN silont -b qsilver
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
-  - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/fetch-latest-wireguard.sh
-  - chmod +x fetch-latest-wireguard.sh compile.sh
-  - bash fetch-latest-wireguard.sh
+  - chmod +x compile.sh
+  - bash compile.sh -c silont -ci drone
   - ls -a
   - ls out/
   - ls out/arch/arm64/boot
