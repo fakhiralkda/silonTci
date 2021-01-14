@@ -13,11 +13,11 @@ steps:
       from_secret: ORIGIN
   commands:
   - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
-  - git clone -qq --depth=1 $ORIGIN -b x11 silont
+  - git clone -qq --depth=1 $ORIGIN -b nee silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c silont -ci drone
+  - bash compile.sh -c silont -ci drone -d silont_perf-defconfig
   - ls -a
   - ls out/
   - ls out/arch/arm64/boot
