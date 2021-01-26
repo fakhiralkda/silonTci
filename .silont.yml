@@ -12,7 +12,8 @@ steps:
     ORIGIN:
       from_secret: ORIGIN
   commands:
-  - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
+  - apt update -qq -y &&  apt upgrade -qq -y && apt install -qq -y openjdk-11-jre-headless
+  - cpio --help
   - git clone -qq --depth=1 $ORIGIN -b n11 silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
