@@ -13,12 +13,9 @@ steps:
       from_secret: ORIGIN
   commands:
   - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
-  - ANDROID_BIN=${PREFIX:-${HOME}/usr}/bin
-  - mkdir -p "${ANDROID_BIN}"
-  - MKDTIMG_FOLDER=$(mktemp -d)
+  - mkdir -p /src/drone/usr/bin
   - curl -LSs https://android.googlesource.com/platform/prebuilts/misc/+archive/master/linux-x86/libufdt.tar.gz | tar -C "${MKDTIMG_FOLDER}" -xzf -
-  - cp "${MKDTIMG_FOLDER}"/mkdtimg "${ANDROID_BIN}"
-  - rm -rf "${MKDTIMG_FOLDER}"
+  - cp temp/mkdtimg /src/drone/usr/bin
   - git clone -qq --depth=1 $ORIGIN -b n11 silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
