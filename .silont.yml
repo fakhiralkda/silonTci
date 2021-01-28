@@ -3,7 +3,7 @@ name: n11
 
 steps:
 - name: compile-test
-  image: fr3akyphantom/droid-builder:focal
+  image: rzlamrr/kernel_compile:latest
   environment:
     TOKED:
       from_secret: TOKED
