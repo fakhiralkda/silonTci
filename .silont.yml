@@ -12,12 +12,11 @@ steps:
     ORIGIN:
       from_secret: ORIGIN
   commands:
-  - apt update -qq -y &&  apt upgrade -qq -y && apt install -qq -y openjdk-11-jre-headless cpio
-  - git clone -qq --depth=1 $ORIGIN -b x11 silont
+  - git clone -qq --depth=1 https://github.com/silont-project/kernel_xiaomi_ginkgo -b x11 silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c silont -ci drone -d vendor/ginkgo-perf_defconfig -cn Test
+  - bash compile.sh -c silont -ci drone -d silont-perf_defconfig -cn Bluto
   - ls -a
   - ls out/
   - ls out/arch/arm64/boot
