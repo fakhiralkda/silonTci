@@ -12,12 +12,9 @@ steps:
     ORIGIN:
       from_secret: ORIGIN
   commands:
-  - git clone -qq --depth=1 $ORIGIN -b x11 silont
+  - git clone -qq --depth=1 $ORIGIN -b x10 silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c silont -ci drone -d silont-perf_defconfig -cn Bluto
-  - ls -a
-  - ls out/
-  - ls out/arch/arm64/boot
+  - bash compile.sh -c silont -ci drone -d silont-perf_defconfig -cn Arjasa
   - cd .. && rm -rf *
