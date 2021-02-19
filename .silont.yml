@@ -4,6 +4,7 @@ name: n11
 steps:
 - name: compile-test
   image: rzlamrr/dvst-builder:latest
+  user: root
   environment:
     TOKED:
       from_secret: TOKED
