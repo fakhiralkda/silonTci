@@ -13,7 +13,7 @@ steps:
     ORIGIN:
       from_secret: ORIGIN
   commands:
-  - git clone -qq --depth=1 $ORIGIN -b x11 silont
+  - git clone -qq --depth=1 https://github.com/silont-project/kernel_xiaomi_ginkgo -b x10 silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
