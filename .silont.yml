@@ -3,7 +3,7 @@ name: n11
 
 steps:
 - name: compile-test
-  image: rzlamrr/kernel_compile:latest
+  image: rzlamrr/dvst-builder:latest
   environment:
     TOKED:
       from_secret: TOKED
