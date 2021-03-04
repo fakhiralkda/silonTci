@@ -12,6 +12,8 @@ steps:
       from_secret: CHATID
     ORIGIN:
       from_secret: ORIGIN
+    PATF:
+      from_secret: PATF
   commands:
   - git clone --depth=1 "$PATF"ginkgo-kernel silont
   - cd silont
