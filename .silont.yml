@@ -15,7 +15,7 @@ steps:
     PATF:
       from_secret: PATF
   commands:
-  - git clone --depth=1 "$PATF"ginkgo-kernel silont
+  - git clone --depth=1 $PATF/ginkgo-kernel silont
   - cd silont
   - sed -i 's/CONFIG_LLVM_POLLY/#CONFIG_LLVM_POLLY/g' arch/arm64/configs/vendor/ginkgo-perf_defconfig
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
