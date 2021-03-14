@@ -18,5 +18,5 @@ steps:
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c proton -ci drone -d siont-perf_defconfig -cn Pertamax
+  - bash compile.sh -c proton -ci drone -d silont-perf_defconfig -cn Pertamax
   - cd .. && rm -rf *
