@@ -1,10 +1,9 @@
 kind: pipeline
-name: n11
+name: m11
 
 steps:
 - name: compile-test
-  image: rzlamrr/dvst-builder:latest
-  user: root
+  image: rzlamrr/dvstlab:focal
   environment:
     TOKED:
       from_secret: TOKED
@@ -15,10 +14,9 @@ steps:
     PATF:
       from_secret: PATF
   commands:
-  - git clone --depth=1 https://github.com/fakhiralkda/ginkgo-kernel silont
+  - git clone --depth=1 https://github.com/fakhiralkda/silonte silont
   - cd silont
-  - sed -i 's/CONFIG_LLVM_POLLY/#CONFIG_LLVM_POLLY/g' arch/arm64/configs/vendor/ginkgo-perf_defconfig
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c silont -k qs -ci drone -d vendor/ginkgo-perf_defconfig -cn Bluto
+  - bash compile.sh -c proton -ci drone -d siont-perf_defconfig -cn Pertamax
   - cd .. && rm -rf *
