@@ -14,7 +14,7 @@ steps:
     PATF:
       from_secret: PATF
   commands:
-  - git clone --depth=1 https://github.com/rzlamrr/kernel-artefak -b n11 silont
+  - git clone --depth=1 https://github.com/rzlamrr/kernel-artefak silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
