@@ -18,5 +18,5 @@ steps:
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c proton -ci drone -d vendor/ginkgo-perf_defconfig -cn New
+  - bash compile.sh -c azure -ci drone -d vendor/ginkgo-perf_defconfig -cn New
   - cd .. && rm -rf *
