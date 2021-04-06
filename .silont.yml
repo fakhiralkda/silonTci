@@ -14,10 +14,9 @@ steps:
     PATF:
       from_secret: PATF
   commands:
-  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b Silont silont
+  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b test silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
-  - bash compile.sh -c proton -ci drone -d vendor/trinket-perf_defconfig -cn New
-  - cd ..
-  - rm -rf *
+  - bash compile.sh -c proton -ci drone -d vendor/ginkgo-perf_defconfig -cn New
+  - cd .. && rm -rf *
