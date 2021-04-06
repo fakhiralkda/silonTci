@@ -19,4 +19,5 @@ steps:
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
   - bash compile.sh -c proton -ci drone -d vendor/trinket-perf_defconfig -cn New
-  - cd .. && rm -rf *
+  - cd ..
+  - rm -rf *
