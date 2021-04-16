@@ -3,7 +3,7 @@ name: m11
 
 steps:
 - name: compile-test
-  image: rzlamrr/dvstlab:focal
+  image: rzlamrr/dvstlab:lite
   environment:
     TOKED:
       from_secret: TOKED
@@ -14,7 +14,7 @@ steps:
     PATF:
       from_secret: PATF
   commands:
-  - git clone --depth=1 https://github.com/rzlamrr/kernel-artefak -b gcc-new silont
+  - git clone --depth=1 https://rzlamrr:$PATF@github.com/rzlamrr/kernel-artefak -b gcc-new silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
