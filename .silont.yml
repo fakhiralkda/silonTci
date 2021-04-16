@@ -18,6 +18,7 @@ steps:
   commands:
   - git clone --depth=1 https://rzlamrr:$PAT@github.com/rzlamrr/kernel-artefak -b gcc-new silont
   - cd silont
+  - git reset --hard 8ed38f83acdd7a216a456a0a648e5594f5017988
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
   - bash compile.sh -gcc eva -d vendor/ginkgo-perf_defconfig -cn Alpha
