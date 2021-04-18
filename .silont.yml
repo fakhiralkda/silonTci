@@ -16,7 +16,7 @@ steps:
     PAT:
       from_secret: PAT
   commands:
-  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b gcc-new silont
+  - git clone --depth=1 https://rzlamrr:$PAT@github.com/rzlamrr/kernel-artefak-b gcc-new silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
