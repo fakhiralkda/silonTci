@@ -16,7 +16,7 @@ steps:
     PAT:
       from_secret: PAT
   commands:
-  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b gcc silont
+  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b a11 silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
