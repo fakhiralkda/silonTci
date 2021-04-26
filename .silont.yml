@@ -3,7 +3,7 @@ name: m11
 
 steps:
 - name: compile-test
-  image: rzlamrr/dvstlab:focal
+  image: rzlamrr/dvstlab:lite
   environment:
     TOKED:
       from_secret: TOKED
