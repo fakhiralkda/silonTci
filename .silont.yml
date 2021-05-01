@@ -1,9 +1,9 @@
 ---
 kind: pipeline
-name: m11
+name: arch-tag
 
 steps:
-- name: compile-test
+- name: compile-test-arch
   image: rzlamrr/dvstlab:arch
   environment:
     TOKED:
@@ -25,10 +25,10 @@ steps:
   - cd .. && rm -rf *
 ---
 kind: pipeline
-name: m11
+name: lite-tag
 
 steps:
-- name: compile-test
+- name: compile-test-lite
   image: rzlamrr/dvstlab:lite
   environment:
     TOKED:
