@@ -18,9 +18,6 @@ steps:
   commands:
   - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b a11-test silont
   - cd silont
-  - git config --global user.email "rzlamrr.dvst@protonmail.com"
-  - git config --global user.name "rzlamrr"
-  - git reset --hard a53a53465ae3419dc9c17f0d761f4771dd5e9f84
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
   - bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Alpha
