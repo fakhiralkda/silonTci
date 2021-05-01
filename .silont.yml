@@ -1,9 +1,35 @@
+---
 kind: pipeline
 name: m11
 
 steps:
 - name: compile-test
-  image: rzlamrr/dvstlab:focal
+  image: rzlamrr/dvstlab:arch
+  environment:
+    TOKED:
+      from_secret: TOKED
+    CHATID:
+      from_secret: CHATID
+    ORIGIN:
+      from_secret: ORIGIN
+    PATF:
+      from_secret: PATF
+    PAT:
+      from_secret: PAT
+  commands:
+  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b a11-test silont
+  - cd silont
+  - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
+  - chmod +x compile.sh
+  - bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Alpha
+  - cd .. && rm -rf *
+---
+kind: pipeline
+name: m11
+
+steps:
+- name: compile-test
+  image: rzlamrr/dvstlab:lite
   environment:
     TOKED:
       from_secret: TOKED
