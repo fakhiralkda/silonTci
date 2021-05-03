@@ -3,7 +3,7 @@ name: arch-tag
 
 steps:
 - name: compile-test-arch
-  image: rzlamrr/dvstlab:arch
+  image: rzlamrr/dvstlab:lite
   environment:
     TOKED:
       from_secret: TOKED
@@ -16,7 +16,7 @@ steps:
     PAT:
       from_secret: PAT
   commands:
-  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b a11-test silont
+  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b R silont
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
