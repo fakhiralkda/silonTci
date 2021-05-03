@@ -1,8 +1,8 @@
 kind: pipeline
-name: arch-tag
+name: lite-tag
 
 steps:
-- name: compile-test-arch
+- name: compile-test-lite
   image: rzlamrr/dvstlab:lite
   environment:
     TOKED:
@@ -16,8 +16,9 @@ steps:
     PAT:
       from_secret: PAT
   commands:
-  - git clone --depth=1 https://github.com/dvstLab/msm-4.14 -b R silont
+  - git clone https://github.com/dvstLab/ginkgo-kernel -b R silont
   - cd silont
+  - rm -rf .git
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
   - chmod +x compile.sh
   - bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Alpha
