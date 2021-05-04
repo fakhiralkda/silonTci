@@ -3,7 +3,7 @@ name: lite-tag
 
 steps:
 - name: compile-test-lite
-  image: rzlamrr/dvstlab:lite
+  image: rzlamrr/dvstlab:focal
   environment:
     TOKED:
       from_secret: TOKED
