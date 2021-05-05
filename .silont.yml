@@ -1,3 +1,30 @@
+---
+kind: pipeline
+name: focal-tag
+
+steps:
+- name: compile-test-focal
+  image: rzlamrr/dvstlab:focal
+  environment:
+    TOKED:
+      from_secret: TOKED
+    CHATID:
+      from_secret: CHATID
+    ORIGIN:
+      from_secret: ORIGIN
+    PATF:
+      from_secret: PATF
+    PAT:
+      from_secret: PAT
+  commands:
+  - git clone https://github.com/dvstLab/ginkgo-kernel -b R silont
+  - rm -rf .git
+  - cd silont
+  - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
+  - chmod +x compile.sh
+  - bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Alpha
+  - cd .. && rm -rf *
+---
 kind: pipeline
 name: lite-tag
 
