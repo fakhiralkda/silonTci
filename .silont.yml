@@ -17,7 +17,7 @@ steps:
     PAT:
       from_secret: PAT
   commands:
-  - git clone https://github.com/dvstLab/ginkgo-kernel -b R silont
+  - git clone https://github.com/dvstLab/ginkgo-kernel -b R-gcc silont
   - rm -rf .git
   - cd silont
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh
