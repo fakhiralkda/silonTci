@@ -6,12 +6,12 @@ steps:
     image: "rzlamrr/dvstlab:lite"
     commands: 
       - "apt update -qq -y && DEBIAN_FRONTEND=noninteractive apt install -qq -y openjdk-8-jdk"
-      - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlian silont"
+      - "git clone https://github.com/dvstLab/ginkgo-kernel -b test silont"
       - "rm -rf .git"
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
       - "chmod +x compile.sh"
-      - "bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Beta"
+      - "bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Test"
       - "cd .. && rm -rf *"
     environment: 
       TOKED:
