@@ -2,10 +2,10 @@
 kind: pipeline
 name: dvstLab
 steps: 
-  - name: compile-test-lite
-    image: "rzlamrr/dvstlab:lite"
+  - name: compile-test-alpine
+    image: "rzlamrr/dvstlab:alpine"
     commands: 
-      - "apt update -qq -y && DEBIAN_FRONTEND=noninteractive apt install -qq -y openjdk-8-jdk"
+      - "apk add --no-cache wget openjdk8"
       - "git clone https://github.com/dvstLab/ginkgo-kernel -b test silont"
       - "rm -rf .git"
       - "cd silont"
