@@ -2,9 +2,10 @@
 kind: pipeline
 name: dvstLab
 steps: 
-  - name: compile-test-focal
-    image: "rzlamrr/dvstlab:focal"
+  - name: compile-test-lite
+    image: "rzlamrr/dvstlab:lite"
     commands: 
+      - "apt update -qq -y && DEBIAN_FRONTEND=noninteractive apt install -qq -y openjdk-8-jdk"
       - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlian silont"
       - "rm -rf .git"
       - "cd silont"
