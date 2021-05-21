@@ -5,7 +5,7 @@ steps:
   - name: compile-test-focal
     image: "rzlamrr/dvstlab:focal"
     commands: 
-      - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlin silont"
+      - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlian silont"
       - "rm -rf .git"
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
