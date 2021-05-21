@@ -2,10 +2,10 @@
 kind: pipeline
 name: dvstLab
 steps: 
-  - name: compile-test-alpine
-    image: "rzlamrr/dvstlab:alpine"
+  - name: compile-test-focal
+    image: "rzlamrr/dvstlab:focal"
     commands: 
-      - "git clone https://github.com/dvstLab/ginkgo-kernel -b test silont"
+      - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlin silont"
       - "rm -rf .git"
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
