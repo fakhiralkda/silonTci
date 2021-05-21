@@ -4,10 +4,10 @@ name: dvstLab
 steps: 
   - name: compile-test-lite
     image: "rzlamrr/dvstlab:lite"
-    commands: 
+    commands:
+      - "rm -rf *"
       - "apt update -qq -y && DEBIAN_FRONTEND=noninteractive apt install -qq -y openjdk-8-jdk"
       - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlian silont"
-      - "rm -rf .git"
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
       - "chmod +x compile.sh"
