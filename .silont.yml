@@ -7,11 +7,11 @@ steps:
     commands:
       - "rm -rf *"
       - "apt update -qq -y && DEBIAN_FRONTEND=noninteractive apt install -qq -y openjdk-8-jdk"
-      - "git clone https://github.com/dvstLab/ginkgo-kernel -b berlian silont"
+      - "git clone https://github.com/android-linux-stable/msm-4.14 -b kernel.lnx.4.14.r4-rel --depth=1 silont"
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
       - "chmod +x compile.sh"
-      - "bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Test"
+      - "bash compile.sh -clang proton -d vendor/trinket-perf_defconfig -cn Test"
       - "cd .. && rm -rf *"
     environment: 
       TOKED:
