@@ -11,7 +11,7 @@ steps:
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
       - "chmod +x compile.sh"
-      - "bash compile.sh -clang proton -d vendor/trinket-perf_defconfig -cn Test"
+      - "bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Test"
       - "cd .. && rm -rf *"
     environment: 
       TOKED:
