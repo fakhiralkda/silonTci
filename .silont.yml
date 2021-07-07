@@ -11,6 +11,7 @@ steps:
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
       - "chmod +x compile.sh"
+      - "sed -i 's/Image.gz-dtb\ dtbo.img/Image.gz-dtb\ #dtbo.img/g' compile.sh"
       - "bash compile.sh -clang proton -d ranchu64_defconfig -cn Test"
       - "cd .. && rm -rf *"
     environment: 
