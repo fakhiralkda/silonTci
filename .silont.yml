@@ -7,11 +7,11 @@ steps:
     commands:
       - "rm -rf *"
       #- "apt update -qq -y && DEBIAN_FRONTEND=noninteractive apt install -qq -y openjdk-8-jdk cpio"
-      - "git clone https://github.com/dvstLab/4.14 -b LA.UM.9.11.r1-03900-NICOBAR.0 --depth=1 silont"
+      - "git clone https://github.com/dvstLab/4.14 -b android-4.14-stable --depth=1 silont"
       - "cd silont"
       - "wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/compile.sh"
       - "chmod +x compile.sh"
-      - "bash compile.sh -clang proton -d vendor/ginkgo-perf_defconfig -cn Test"
+      - "bash compile.sh -clang proton -d ranchu64_defconfig -cn Test"
       - "cd .. && rm -rf *"
     environment: 
       TOKED:
